@@ -23,6 +23,18 @@ import PlaygroundSupport
 // Create a new canvas
 let canvas = Canvas(width: 400, height: 600)
 
+//Draw background
+canvas.drawShapesWithBorders = false
+canvas.fillColor = Color(hue: 85, saturation: 5, brightness: 88, alpha: 100)
+canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 400, height: 600)
+
+//Create undertones
+canvas.translate(byX: 10, byY: 350)
+for x in stride(from: 100, to: 0, by: -5) {
+    canvas.textColor = Color(hue: 0, saturation: 0, brightness: 0, alpha: x)
+    canvas.drawText(message: "undertones", size: 70, x: 0, y: -30)
+    canvas.rotate(by: -5)
+}
 
 //: ## Template code
 //: The code below is necessary to see the result of your work in the Assistant Editor at right. Please do not remove.
